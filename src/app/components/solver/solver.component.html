@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit(sudoku)" #sudoku>
+    <table *ngIf="theme == 'accent'" class="mx-auto">
+        <tr *ngFor="let list of grid;let i=index">
+            <td *ngFor="let eachNum of list;let j=index" >
+                <input name="box" type="number" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-info': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-warn': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6}">
+            </td>
+        </tr>
+    </table>
+    <table *ngIf="theme == 'primary'" class="mx-auto">
+        <tr *ngFor="let list of grid;let i=index">
+            <td *ngFor="let eachNum of list;let j=index" >
+                <input name="box" type="number" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-purple': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-light': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6}">
+            </td>
+        </tr>
+    </table>
+    <div class="d-flex align-items-center justify-content-center">
+        <button mat-raised-button class="my-3 mr-2" color="{{theme}}" type="submit">Solve</button>
+        <button mat-raised-button class="my-3 mx-2" color={{resetColor}} (click)="onReset()" type="button">Reset</button>
+    </div>
+</form>

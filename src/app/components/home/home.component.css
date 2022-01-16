@@ -1,0 +1,54 @@
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: black;
+    /*replace with your color*/
+}
+
+.architect{
+    font-family: 'Architects Daughter', cursive;
+}
+
+@media (min-width:280px)  { /* smartphones, iPhone, portrait 480x320 phones */
+    mat-toolbar{
+        font-size: 0.55em;
+    }
+}
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
+    mat-toolbar{
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ 
+    mat-toolbar{
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    mat-toolbar{
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width:720px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    mat-toolbar{
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    mat-toolbar{
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width:1024px) { /* big landscape tablets, laptops, and desktops */ 
+    mat-toolbar{
+        font-size: 1.7em;
+    }
+}

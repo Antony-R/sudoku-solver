@@ -1,0 +1,9 @@
+<mat-toolbar class="poppins d-flex justify-content-between mb-5" color="{{ navbarColor }}">
+    <span>{{ title }}<span class="small architect px-3">Made by r.antony67@gmail.com</span></span>
+    <mat-slide-toggle [(ngModel)]="isNavbarAccent" (click)="toggleNavbarColor()" color="primary">
+        <i class="fas fa-paint-roller pl-3"></i>
+    </mat-slide-toggle>
+</mat-toolbar>
+<div class="container py-3">
+    <app-solver theme={{navbarColor}} resetColor="{{navbarColor=='accent'?'warn':''}}"></app-solver>
+</div>

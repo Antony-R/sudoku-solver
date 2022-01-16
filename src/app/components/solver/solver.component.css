@@ -1,0 +1,110 @@
+.number-input {
+    border: none;
+    text-decoration: none;
+    margin: 0;
+    
+}
+
+.border{
+    border: 0.2em solid !important;
+}
+
+input{
+    outline: none;
+    font-weight: bold !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+input.border-info{
+    color: #5bc0de;
+}
+
+input.border-warn{
+    color: #F44336;
+}
+
+input.border-purple{
+    color: #6A1B9A;
+}
+
+input.border-light{
+    color: #6c757d;
+}
+
+input.border-danger:focus{
+    outline: none;
+}
+
+input.border-primary:focus{
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (min-width:280px)  { /* smartphones, iPhone, portrait 480x320 phones */
+    input{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 6px;
+        font-size: 10px;
+        width: 26px;
+    }
+}
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
+    input{
+        padding: 10px 0px 10px 10px;
+        font-size: 1em;
+        width: 35px;
+    }
+}
+
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ 
+    input{
+        padding: 10px 0px 10px 15px;
+        font-size: 1em;
+        width: 50px;
+    }
+}
+
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    input{
+        padding: 10px 0px 10px 20px;
+        font-size: 1em;
+        width: 71px;
+    }
+}
+
+@media (min-width:720px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    input{
+        padding: 10px 0px 10px 20px;
+        font-size: 1em;
+        width: 60px;
+    }
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    input{
+        padding: 10px 0px 10px 20px;
+        font-size: 1em;
+        width: 106px;
+    }
+}
+
+@media (min-width:1024px) { /* big landscape tablets, laptops, and desktops */ 
+    input{
+       width: 5em;
+       padding: 10px 0px 10px 25px;
+       font-size: 1em;
+    }
+}
