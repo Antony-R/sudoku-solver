@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+# sudoku-solver
+A website to solve sudoku puzzles using backtracking. Made with angular.
+Here is the link to the website.
+https://sudoku-solver-9x9.web.app/
+
 # SudokuSolver
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
@@ -27,8 +31,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 =======
-# sudoku-solver
-A website to solve sudoku puzzles using backtracking. Made with angular.
-Here is the link to the website.
-https://sudoku-solver-9x9.web.app/
->>>>>>> ac061f0784edebe6c65fc78211cbf9beb1857097
+
+
