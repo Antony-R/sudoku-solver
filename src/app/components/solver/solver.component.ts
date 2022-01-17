@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { SolverService } from 'src/app/services/solver.service';
+import { HowToUseDialogComponent } from '../how-to-use-dialog/how-to-use-dialog.component';
 import { InvalidDialogComponent } from '../invalid-dialog/invalid-dialog.component';
 import { PuzzleSolvedDialogComponent } from '../puzzle-solved-dialog/puzzle-solved-dialog.component';
 
@@ -15,9 +16,32 @@ export class SolverComponent implements OnInit {
   @Input() theme: string = '';
   @Input() resetColor: string = '';
 
-  grid: number[][] = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
-  initialGrid: number[][] = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
-  inputGrid: number[][] = []
+  // grid: number[][] = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
+  // initialGrid: number[][] = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
+  // inputGrid: number[][] = []
+  grid: any[][] = [
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                  [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]]
+  
+  initialGrid: any[][] = [
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]]
+
+  inputGrid: any[][] = []
 
   constructor(private solverService: SolverService, private dialog: MatDialog) { }
 
@@ -44,6 +68,10 @@ export class SolverComponent implements OnInit {
 
   openInvalidDialog(){
     this.dialog.open(InvalidDialogComponent)
+  }
+
+  openHowToUseDialog(){
+    this.dialog.open(HowToUseDialogComponent)
   }
 
   openSolvedDialog(){

@@ -16,6 +16,7 @@ import { SolverComponent } from './components/solver/solver.component';
 import { SolverService } from './services/solver.service';
 import { PuzzleSolvedDialogComponent } from './components/puzzle-solved-dialog/puzzle-solved-dialog.component';
 import { InvalidDialogComponent } from './components/invalid-dialog/invalid-dialog.component';
+import { HowToUseDialogComponent } from './components/how-to-use-dialog/how-to-use-dialog.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent}
@@ -27,9 +28,10 @@ const routes: Routes = [
     HomeComponent,
     SolverComponent,
     PuzzleSolvedDialogComponent,
-    InvalidDialogComponent
+    InvalidDialogComponent,
+    HowToUseDialogComponent
   ],
-  entryComponents: [PuzzleSolvedDialogComponent, InvalidDialogComponent],
+  entryComponents: [PuzzleSolvedDialogComponent, InvalidDialogComponent, HowToUseDialogComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,

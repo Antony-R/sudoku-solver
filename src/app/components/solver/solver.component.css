@@ -5,6 +5,14 @@
     
 }
 
+a:hover{
+    cursor: pointer;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
 .border{
     border: 0.2em solid !important;
 }
