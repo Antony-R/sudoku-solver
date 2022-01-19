@@ -2,22 +2,24 @@
     <table *ngIf="theme == 'accent'" class="mx-auto">
         <tr *ngFor="let list of grid;let i=index">
             <td *ngFor="let eachNum of list;let j=index" >
-                <input name="box" type="number" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-info': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-warn': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6}">
+                <input name="box" type="number" [maxLength]="1" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-info': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-warn': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6, 'user-input-black': inputIndex.has(i+','+j)}">
             </td>
         </tr>
     </table>
     <table *ngIf="theme == 'primary'" class="mx-auto">
         <tr *ngFor="let list of grid;let i=index">
-            <td *ngFor="let eachNum of list;let j=index" >
-                <input name="box" type="number" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-purple': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-light': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6}">
+            <td *ngFor="let eachNum of list;let j=index">
+                <input name="box" type="number" [maxLength]="1" min="0" max="9" value={{eachNum}} required class="border" [ngClass]="{'border-purple': i < 3  && j < 3 || i >= 6 && i < 9 && j < 3 || i >= 3 && i < 6 && j >=3 && j < 6 || i >=6 && i < 9 && j >= 6 && j < 9 || i < 3 && j >= 6 && j < 9, 'border-light': i >= 3 && i < 6 && j < 3 || i < 3 && j >= 3 && j < 6 || i >= 3 && i < 6 && j >=6 && j < 9 || i >= 6 && j >= 3 && j < 6, 'user-input-red': inputIndex.has(i+','+j)}">
             </td>
         </tr>
     </table>
     <div class="d-flex align-items-center justify-content-center">
         <button mat-raised-button class="my-2 mr-2 poppins" color="{{theme}}" type="submit">Solve</button>
-        <button mat-raised-button class="my-2 mx-2 poppins" color={{resetColor}} (click)="onReset()" type="button">Reset</button>
+        <button mat-raised-button class="my-2 mx-2 poppins" color={{resetColor}} (click)="onReset()" type="reset">Reset</button>
     </div>
     <div class="d-flex align-items-center justify-content-center">
-        <p class="poppins"><a class="text-primary" (click)="openHowToUseDialog()">How to use</a>. Tip: Use Tab key to navigate between cells.</p>
+        <div>
+        <p class="poppins"><a class="text-primary" (click)="openHowToUseDialog()">How to use.</a> Tip: Use Tab key to navigate between cells.</p>
+    </div>
     </div>
 </form>

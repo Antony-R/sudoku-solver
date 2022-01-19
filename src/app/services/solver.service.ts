@@ -1,5 +1,6 @@
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { Injectable } from '@angular/core';
+import { valid } from '../models/valid';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class SolverService {
     return globalGrid
   }
 
-  isValidInput(grid: number[][]): boolean{
+  isValidInput(grid: number[][]): valid{
     let sudokuMap: any = {}
+    let validInput: valid = {isValid: false, message: ''}
     for (let i = 0; i < grid.length; i++){
       for (let j = 0; j < grid[0].length; j++){
         if (grid[i][j] !== 0 && grid[i][j] >= 1 && grid[i][j] <= 9){
@@ -23,20 +25,26 @@ export class SolverService {
           let colCheck = grid[i][j] + " found in col " + j 
           let sectorCheck = grid[i][j] + " found in sector " + (Math.floor(i / 3) * 3) + (Math.floor(j / 3) * 3)
           if (rowCheck in sudokuMap || colCheck in sudokuMap || sectorCheck in sudokuMap){
-            return false
+            if (rowCheck in sudokuMap) validInput.message = grid[i][j] + ' present in row ' + (i + 1) + ' multiple times'
+            else if (colCheck in  sudokuMap) validInput.message = grid[i][j] + ' present in column ' + (j + 1) + ' multiple times'
+            else validInput.message = grid[i][j] + ' present in sector no. ' + sudokuMap[sectorCheck] + ' multiple times'
+            return validInput
           }
           else {
             sudokuMap[rowCheck] = grid[i][j]
             sudokuMap[colCheck] = grid[i][j]
-            sudokuMap[sectorCheck] = grid[i][j]
+            sudokuMap[sectorCheck] =  (Math.floor(i / 3) * 3) + (Math.floor(j / 3)) + 1//sector number
           }
         }
         else if (grid[i][j] < 0 || grid[i][j] > 9){
-          return false
+          validInput.isValid = false
+          validInput.message = 'given input is out of bounds'
+          return validInput
         }
       }
     }
-    return true
+    validInput.isValid = true
+    return validInput
   }
 
 }

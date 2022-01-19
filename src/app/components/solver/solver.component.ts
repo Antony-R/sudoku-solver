@@ -42,6 +42,7 @@ export class SolverComponent implements OnInit {
     [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]]
 
   inputGrid: any[][] = []
+  inputIndex: Set<String> = new Set()
 
   constructor(private solverService: SolverService, private dialog: MatDialog) { }
 
@@ -50,18 +51,24 @@ export class SolverComponent implements OnInit {
 
   onSubmit(sudoku: any){
     this.inputGrid = []
+    this.inputIndex = new Set()
     let index: number = 0
     for(let i = 0; i < 9; i++){
       this.inputGrid.push([])
       for (let j = 0; j < 9; j++){
-        this.inputGrid[i].push(Number(sudoku[index++].value))
+        let numberAtCurCell: number = Number(sudoku[index++].value)
+        this.inputGrid[i].push(numberAtCurCell)
+        if (numberAtCurCell !== 0)
+          this.inputIndex.add(i + "," + j)
       }
     }
-    if (this.solverService.isValidInput(this.inputGrid)){
+    let validCheck = this.solverService.isValidInput(this.inputGrid)
+    if (validCheck.isValid){
       this.grid = this.solverService.getSolution(this.inputGrid)
       this.openSolvedDialog()
     }
     else {
+      InvalidDialogComponent.errorMsg = validCheck.message
       this.openInvalidDialog()
     }
   }
@@ -80,6 +87,7 @@ export class SolverComponent implements OnInit {
 
   onReset(){
     this.grid = this.initialGrid
+    this.inputIndex = new Set()
   }
 
 }

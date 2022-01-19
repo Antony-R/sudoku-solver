@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-invalid-dialog',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvalidDialogComponent implements OnInit {
 
+  static errorMsg: string = ''
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get ErrorMsg(){
+    return InvalidDialogComponent.errorMsg
   }
 
 }

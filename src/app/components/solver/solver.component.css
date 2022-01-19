@@ -14,7 +14,7 @@ a:hover{
 }
 
 .border{
-    border: 0.2em solid !important;
+    border: 0.24em solid !important;
 }
 
 input{
@@ -36,7 +36,7 @@ input.border-purple{
 }
 
 input.border-light{
-    color: #6c757d;
+    color: #616161;
 }
 
 input.border-danger:focus{
@@ -45,6 +45,16 @@ input.border-danger:focus{
 
 input.border-primary:focus{
     outline: none;
+}
+
+input.user-input-black{
+    color: black;
+    font-weight: bold;
+}
+
+input.user-input-red{
+    color: red;
+    font-weight: bold;
 }
 
 /* Chrome, Safari, Edge, Opera */
