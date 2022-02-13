@@ -83,7 +83,7 @@ export class SolverComponent implements OnInit {
             this.currentCol = solution.current[counter].col
             counter++
           }
-        }, 200)
+        }, 150)
       }
       else {
         this.grid = JSON.parse(JSON.stringify(solution.solvedGrid))
