@@ -1,6 +1,6 @@
-import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { Injectable } from '@angular/core';
 import { valid } from '../models/valid';
+import { solution } from '../models/solution';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,14 @@ export class SolverService {
 
   constructor() { }
 
-  getSolution(grid: number[][]){
+  getSolution(grid: number[][], seeSteps: boolean){
     globalGrid = grid
+    stepsNeeded = seeSteps
+    steps = []
+    current = []
     solve()
-    return globalGrid
+    let solution: solution = {solvedGrid: globalGrid, steps: steps, current: current}
+    return solution
   }
 
   isValidInput(grid: number[][]): valid{
@@ -50,6 +54,9 @@ export class SolverService {
 }
 
 var globalGrid: number[][] = []
+var steps: any[] = []
+var current: {row: number, col: number}[] = []
+var stepsNeeded: boolean
 
 function isPossible(row: number, col: number, entry: number): boolean {
   //horizontal scan
@@ -78,6 +85,11 @@ function solve(){
         for (let possible = 1; possible < 10; possible++){
           if (isPossible(i, j, possible)){
             globalGrid[i][j] = possible
+            //steps.push([possible, i, j])
+            if (stepsNeeded){
+              steps.push(JSON.parse(JSON.stringify(globalGrid)))
+              current.push({row: i, col: j})
+            }
             if (solve()) return true
             globalGrid[i][j] = 0
           }
@@ -88,3 +100,4 @@ function solve(){
   }
   return true
 }
+

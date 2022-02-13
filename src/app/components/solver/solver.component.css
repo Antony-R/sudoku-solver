@@ -13,6 +13,10 @@ a:hover{
     font-family: 'Poppins', sans-serif;
 }
 
+.glow {
+    box-shadow: 0 0 6px 6px #FF355E;
+}
+
 .border{
     border: 0.24em solid !important;
 }
@@ -53,7 +57,7 @@ input.user-input-black{
 }
 
 input.user-input-red{
-    color: red;
+    color: #FF6037;
     font-weight: bold;
 }
 

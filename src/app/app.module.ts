@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { FormsModule } from '@angular/forms';
 import { SolverComponent } from './components/solver/solver.component';
 import { SolverService } from './services/solver.service';
@@ -42,7 +43,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatSlideToggleModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [SolverService],
   bootstrap: [AppComponent]
