@@ -60,7 +60,10 @@ export class SolverComponent implements OnInit {
           this.inputIndex.add(i + "," + j)
       }
     }
-    if (this.inputIndex.size == 81) return
+    if (this.inputIndex.size == 81) {
+      this.inputIndex = new Set()
+      return
+    }
     let validCheck = this.solverService.isValidInput(this.inputGrid)
     if (validCheck.isValid){
       this.grid = JSON.parse(JSON.stringify(this.inputGrid))

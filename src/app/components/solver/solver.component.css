@@ -14,7 +14,8 @@ a:hover{
 }
 
 .glow {
-    box-shadow: 0 0 6px 6px #FF355E;
+    color: black !important;
+    background-color: #FFC107 !important;
 }
 
 .border{
@@ -27,20 +28,24 @@ input{
     font-family: 'Poppins', sans-serif;
 }
 
-input.border-info{
-    color: #5bc0de;
+input.cell-info{
+    background-color: #69F0AE;
 }
 
-input.border-warn{
-    color: #F44336;
+input.cell-warn{
+    background-color: #F44336;
 }
 
-input.border-purple{
-    color: #6A1B9A;
+input.cell-purple{
+    background-color: #9C27B0;
+    color: white;
+    border-color: black !important;
 }
 
-input.border-light{
-    color: #616161;
+input.cell-light{
+    background-color: #616161;
+    color: white;
+    border-color: black !important;
 }
 
 input.border-danger:focus{
@@ -51,13 +56,13 @@ input.border-primary:focus{
     outline: none;
 }
 
-input.user-input-black{
-    color: black;
+input.user-input-white{
+    border-color: #fff !important;
     font-weight: bold;
 }
 
 input.user-input-red{
-    color: #FF6037;
+    border-color: #FF6037 !important;
     font-weight: bold;
 }
 

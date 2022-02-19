@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   title: string = '9 x 9 Sudoku Solver'
   isNavbarAccent: boolean = false
   navbarColor: string = 'primary'
+  madeBy: string = 'Made by'
+  mailId: string = 'r.antony67@gmail.com'
 
   constructor() { }
 
@@ -21,6 +23,13 @@ export class HomeComponent implements OnInit {
       this.navbarColor = 'accent'
     else
       this.navbarColor = 'primary'
+  }
+
+  changeBtnText(){
+    if (this.madeBy === 'Made by')
+      this.madeBy = this.mailId
+    else
+      this.madeBy = 'Made by'
   }
 
 }

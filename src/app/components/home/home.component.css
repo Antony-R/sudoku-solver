@@ -7,8 +7,20 @@
     /*replace with your color*/
 }
 
+.outline{
+    border: 2px dashed;
+}
+
+.outline:hover{
+    cursor: pointer;
+}
+
 .architect{
     font-family: 'Architects Daughter', cursive;
+}
+
+.jura{
+    font-family: 'Jura', sans-serif;
 }
 
 @media (min-width:280px)  { /* smartphones, iPhone, portrait 480x320 phones */
